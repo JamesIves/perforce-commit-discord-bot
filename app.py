@@ -1,6 +1,7 @@
 import os
 import subprocess
 import discord
+import asyncio
 import time
 
 from settings import *
@@ -33,7 +34,7 @@ async def post_changes():
   payload = check_for_changes()
 
   if payload != '':
-    await client.send_message(discord.Object(id='276383733945204736'), payload)
+    await client.send_message(discord.Object(id='276383733945204736'), '`%s`' % (payload))
 
   else:
     return
@@ -42,8 +43,7 @@ async def post_changes():
 async def on_ready():
   t=time.time()
   while True:
-    if time.time()-t>30:
-        await post_changes()
-        t=time.time()
+    await post_changes()
+    await asyncio.sleep(30)
 
 client.run(DISCORD_BOT_TOKEN)

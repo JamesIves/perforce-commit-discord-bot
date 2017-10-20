@@ -22,7 +22,7 @@ In order to power this bot you'll require a [Discord API bot token]((https://dis
 
 
 ## Inviting the Bot
-Once the application is running you'll need to invite the bot to your Discord server. Replace the `YOUR_CLIENT_ID_HERE` portion of the following URL with the one found in your [Discord API settings](https://discordapp.com/developers/docs/intro).
+Once the application is running you'll need to invite the bot to your Discord server. Replace the `YOUR_CLIENT_ID_HERE` portion of the following URL with the one found in your [Discord API settings](https://discordapp.com/developers/docs/intro). Once connected the bot will make an initial check and then begin re-checking every 30 seconds. The bot doesn't persist data so if you restart the application the bot will post the most recent commit message again. 
 
 `https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=0`
 

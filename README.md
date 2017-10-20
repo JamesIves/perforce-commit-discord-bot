@@ -1,5 +1,5 @@
 # Perforce Commit Logger Discord Bot
-This is a small Discord bot that pushes commits made on a Perforce version control server to a Discord channel. I initially created this for Red Moon Workshop as there's no webhooks for the free version of Perforce, and they wanted a way to track their developers progress without running a terminal command.
+This is a small [Discord](https://discordapp.com/) bot that pushes commits made on a [Perforce version control](https://www.perforce.com/) server to a Discord channel. I initially created this for [Red Moon Workshop](https://redmoonworkshop.net/) as there's no webhooks for the free version of Perforce, and they wanted a way to track their developers progress without running a terminal command.
 
 ## Requirements
 This application requires [Python 3.6.1](https://www.python.org/) and the following packages which can be installed with pip.

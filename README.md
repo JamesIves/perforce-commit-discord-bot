@@ -26,3 +26,4 @@ Once the application is running you'll need to invite the bot to your Discord se
 
 `https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=0`
 
+![Example](assets/example.png)

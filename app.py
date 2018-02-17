@@ -1,11 +1,7 @@
 import os
 import subprocess
-import discord
-import asyncio
-
-from settings import *
-
-client = discord.Client()
+from discord_hooks import Webhook
+from settings import DISCORD_WEBHOOK_URL
 
 # Stores the most recent commit.
 global_store = {
@@ -25,21 +21,24 @@ def check_for_changes():
   else: 
     return ''
 
-@client.event
-async def post_changes():
-  """ Posts the changes to the server  """
+def post_changes():
+  """ Posts the changes to the Discord server via a webhook.  """
   payload = check_for_changes()
 
   if payload != '':
-    await client.send_message(discord.Object(id='%s') % (DISCORD_CHANNEL_ID), '`%s`' % (payload))
+    message = Webhook(DISCORD_WEBHOOK_URL, msg='`%s`' % (payload))
+    message.post()
 
   else:
     return
 
-@client.event
-async def on_ready():
-  while True:
-    await post_changes()
-    await asyncio.sleep(30)
+def init():
+  """ Initializes a 30 second timer used to check if commits have been made.  """
+  import time
+  timer = time.time()
 
-client.run(DISCORD_BOT_TOKEN)
+  while True:
+    post_changes()
+    time.sleep(30.0 - ((time.time() - timer) % 30.0))
+
+init()

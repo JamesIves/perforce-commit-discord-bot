@@ -10,13 +10,17 @@ global_store = {
 
 def check_for_changes():
   """ Runs the p4 changes command to get the latest commits from the server. """
-  p4_changes = subprocess.Popen('p4 changes -t -m 1', stdout=subprocess.PIPE, shell=True)
-  output = p4_changes.stdout.read().decode("utf-8")
+  p4_changes = subprocess.Popen('p4 changes -t -m 1 -l', stdout=subprocess.PIPE, shell=True)
+  output = p4_changes.stdout.read().decode('ISO-8859-1')
 
   if output != global_store['latest_change']:
     global_store['latest_change'] = output
 
-    return output
+    if '*pending*' in output: 
+      return ''
+
+    else:
+      return output
 
   else: 
     return ''

@@ -30,7 +30,9 @@ def post_changes():
   payload = check_for_changes()
 
   if payload != '':
-    message = Webhook(DISCORD_WEBHOOK_URL, msg='`%s`' % (payload))
+    message = Webhook(DISCORD_WEBHOOK_URL, color=0xc8702a)
+    message.set_desc('`%s`' % (payload))
+    message.set_footer(text='https://github.com/JamesIves/perforce-commit-discord-bot', ts=True)
     message.post()
 
   else:

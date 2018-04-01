@@ -26,3 +26,6 @@ In order to power this bot you'll require a [Discord Webhook URL]((https://suppo
 Once you've configured the bot, run `$ python app.py` in the terminal and the bot should begin posting the Perfoce servers commit logs to the channel.
 
 ![Example](assets/readme.png)
+
+## Disclaimer
+This project is in no way affiliated or endorsed with/by Perforce. Please use at your own discretion. 

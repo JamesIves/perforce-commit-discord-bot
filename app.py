@@ -1,5 +1,6 @@
 import os
 import subprocess
+import time
 from discord_hooks import Webhook
 from settings import DISCORD_WEBHOOK_URL
 
@@ -41,7 +42,6 @@ def post_changes():
 
 def init():
   """ Initializes a 30 second timer used to check if commits have been made.  """
-  import time
   timer = time.time()
 
   while True:

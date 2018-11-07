@@ -10,7 +10,7 @@ With this bot you're able to keep track of commits made to a [Perforce version c
 
 ## How It Works :clapper: 
 
-Every thirty seconds the bot runs a Perforce command in the terminal that checks for the most recent changes. If it finds one it stores it in memory, if the change it finds is the same as the one it gathered previously then it discards it. You'll need to provide the bot with access to your servers Perforce command line. One way of doing this is running the Python application on the server which hosts your Perforce server. If you can type `p4 changes` yourself then the bot will be able to do its thing.
+Every thirty seconds the bot runs a Perforce command in the terminal that checks for the most recent changes. If it finds one it stores it in memory, if the change it finds is the same as the one it gathered previously then it discards it. You'll need to provide the bot with access to your servers Perforce command line. One way of doing this is running the Python application on the server which hosts your Perforce instance. If you can type `p4 changes` yourself then the bot will be able to do its thing.
 
 ## Configuration 📁
 

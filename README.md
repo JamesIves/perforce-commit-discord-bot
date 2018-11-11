@@ -8,7 +8,7 @@ With this bot you're able to keep track of commits made to a [Perforce version c
 3. The service requires access to the `p4 changes` command in the terminal, your bot should be installed somewhere where it can automatically perform this command. Once suitable access has been provided you can initialize the service by running `$ python app.py`.
 4. Optionally you should create a CRON script or something similar that restarts the `app.py` file on server reboot in order to keep the bot alive through restarts.
 
-## How It Works :clapper: 
+## Getting Started :airplane:
 
 Every thirty seconds the bot runs a Perforce command in the terminal that checks for the most recent changes. If it finds one it stores it in memory, if the change it finds is the same as the one it gathered previously then it discards it. You'll need to provide the bot with access to your servers Perforce command line. One way of doing this is running the Python application on the server which hosts your Perforce instance. If you can type `p4 changes` yourself then the bot will be able to do its thing.
 

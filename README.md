@@ -5,7 +5,7 @@ With this bot you're able to keep track of commits made to a [Perforce version c
 
 1. Within your Discord server go to the settings for the channel you'd like the commit logs to be posted to and copy the webhook URL.
 2. Save the webhook URL as an environment variable called `DISCORD_WEBHOOK_URL`. 
-3. The service requires access to the `p4 changes` command in the terminal, your bot should be installed somewhere where it can automatically perform this command. Once suitable access has been provided you can initialize the service by running `$ python app.py`.
+3. The service requires access to the `p4 changes` command in the terminal, your bot should be installed somewhere where it can automatically perform this command. Once suitable access has been provided you'll need to run `$ pip install -r requirements.txt` followed by `$ python app.py` to initialize the service.
 4. Optionally you should create a CRON script or something similar that restarts the `app.py` file on server reboot in order to keep the bot alive through restarts.
 
 ## Getting Started :airplane:

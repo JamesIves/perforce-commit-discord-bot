@@ -1,7 +1,7 @@
 import os
 import subprocess
 import time
-from discord_hooks import Webhook
+from discord_webhooks import DiscordWebhooks
 from settings import DISCORD_WEBHOOK_URL
 
 # Stores the most recent commit.
@@ -31,11 +31,11 @@ def post_changes():
   payload = check_for_changes()
 
   if payload != '':
-    message = Webhook(DISCORD_WEBHOOK_URL, color=0xc8702a)
+    message = DiscordWebhooks(DISCORD_WEBHOOK_URL)
+    message.set_content(color=0xc8702a, description='`%s`' % (payload))
     message.set_author(name='Perforce')
-    message.set_desc('`%s`' % (payload))
     message.set_footer(text='https://github.com/JamesIves/perforce-commit-discord-bot', ts=True)
-    message.post()
+    message.send()
 
   else:
     return

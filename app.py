@@ -9,10 +9,14 @@ global_store = {
   'latest_change': ''
 }
 
-def check_for_changes():
+def check_p4():
   """ Runs the p4 changes command to get the latest commits from the server. """
   p4_changes = subprocess.Popen('p4 changes -t -m 1 -l', stdout=subprocess.PIPE, shell=True)
-  output = p4_changes.stdout.read().decode('ISO-8859-1')
+  return p4_changes.stdout.read().decode('ISO-8859-1')
+
+def check_for_changes():
+  """ Figures out if the latest p4 change is new or should be thrown out. """
+  output = check_p4()
 
   if output != global_store['latest_change']:
     global_store['latest_change'] = output

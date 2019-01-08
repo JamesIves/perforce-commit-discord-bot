@@ -1,4 +1,4 @@
-# Perforce Commit Logger Discord Bot 🗒️
+# Perforce Commit Logger Discord Bot 🗒️ ✏️
 
 [![Build Status](https://travis-ci.org/JamesIves/perforce-commit-discord-bot.svg?branch=master)](https://travis-ci.org/JamesIves/perforce-commit-discord-bot) [![Issues](https://img.shields.io/github/issues/JamesIves/perforce-commit-discord-bot.svg)](https://github.com/JamesIves/perforce-commit-discord-bot/issues)
 
